@@ -41,6 +41,7 @@ jobs:
         path: target/cucumber-reports  
       #Github searches for index.html for publishing we have overview-features as entry so copy to index.html  
     - name: Fix entry HTML for GitHub Pages 
+      if: always()
       run: |
         cd target/cucumber-reports/cucumber.html/cucumber-html-reports
         cp overview-features.html index.html    
