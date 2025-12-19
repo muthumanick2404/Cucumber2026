@@ -27,6 +27,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean test -Dheadless=true
+    #Github searches for index.html for publishing we have overview-features as entry so copy to index.html  
+    - name: Fix entry HTML for GitHub Pages 
+      if: always()
+      run: |
+        cd target/cucumber-reports/cucumber.html/cucumber-html-reports
+        cp overview-features.html index.html   
     - name: Archive logs
       if: always()
       uses: actions/upload-artifact@v6.0.0
@@ -39,12 +45,7 @@ jobs:
       with:
         name: Report
         path: target/cucumber-reports  
-      #Github searches for index.html for publishing we have overview-features as entry so copy to index.html  
-    - name: Fix entry HTML for GitHub Pages 
-      if: always()
-      run: |
-        cd target/cucumber-reports/cucumber.html/cucumber-html-reports
-        cp overview-features.html index.html    
+   
     - name: Deploy to GitHub Pages
       if: always()
       uses: JamesIves/github-pages-deploy-action@v4.7.6
