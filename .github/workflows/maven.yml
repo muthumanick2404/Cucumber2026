@@ -28,13 +28,13 @@ jobs:
     - name: Build with Maven
       run: mvn clean test
     - name: Archive logs
-      if(): always()
+      if: always()
       uses: actions/upload-artifact@v6.0.0
       with:
         name: Logs
         path: target/logs
     - name: Archive Report
-      if(): always()
+      if: always()
       uses: actions/upload-artifact@v6.0.0
       with:
         name: Report
