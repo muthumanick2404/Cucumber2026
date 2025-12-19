@@ -19,7 +19,7 @@ public class DriverFactory {
 		case "chrome":
 			if(headless) {
 				ChromeOptions cp = new ChromeOptions();
-				cp.addArguments("--headless");
+				cp.addArguments("--headless","--window-size=1920,1080");
 				driver = new ChromeDriver(cp);
 				break;
 			}
