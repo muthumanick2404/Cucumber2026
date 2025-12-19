@@ -39,4 +39,11 @@ jobs:
       with:
         name: Report
         path: target/cucumber-reports  
+    - name: Deploy to GitHub Pages
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4.7.6
+      with:
+        token: ${{ secrets.Muthu1234}}
+        folder: target/cucumber-reports
+          
 
