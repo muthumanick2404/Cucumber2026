@@ -10,7 +10,7 @@ import net.masterthought.cucumber.ReportBuilder;
 public class Reporting {
     public static void  generateReport(){
       
-        Configuration config = new Configuration(new File("./target/cucumer-reports/cucumber.html"), "Cucumber2026FW");
+        Configuration config = new Configuration(new File("./target/cucumber-reports/cucumber.html"), "Cucumber2026FW");
         config.addClassifications("Webtesting", "Cucumber BDD with selenium java");
         List<String> jsonfiles = new ArrayList<>();
 		jsonfiles.add("./target/report.json");
