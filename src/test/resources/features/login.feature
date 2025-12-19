@@ -8,4 +8,4 @@ Then HomePage screen should be displayed
 
 Examples: 
 |userName|password|
-|kingmaker2404@gmail.com|Muthu$240495|
+|kingmaker2404@gmail.com|Muthu$24049|
